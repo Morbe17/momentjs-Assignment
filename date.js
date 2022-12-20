@@ -1,4 +1,5 @@
 import moment from 'moment-timezone'
+
 // Q1
 
 const formatAnyInputToStandardDate = (date) =>{
@@ -28,8 +29,6 @@ const getLastMondayOfYear = (year) =>{
     dateMoment.isoWeekday(1)
 
     return dateMoment.format('MM/DD/YYYY')
-
-
 }
 
 //Q4
@@ -44,8 +43,6 @@ const differenceBetweenTwoDates = (date1, time1, date2, time2) =>{
 
     return `${difference.years()} Years, ${difference.months()} Months, ${difference.days()} Days, ${Math.abs(difference.hours())} Hours, and ${Math.abs(difference.minutes())} minute`
 }
-
-/* console.log(differenceBetweenTwoDates("03/01/2022", "13:03", "03/01/2022", "15:04")) */
 
 //Q5
 
@@ -89,8 +86,6 @@ const returnClosestDate = () =>{
     return closerDate.format('DD/MM/YYYY')
 }
 
-/* console.log(returnClosestDate()) */
-
 //Q6
 
 const countdownMiami = () =>{
@@ -114,9 +109,6 @@ const countdownMiami = () =>{
     return `Months: ${months}, Days: ${days}, Hours: ${hours},  Minutes: ${minutes}, Seconds: ${seconds}`
 }
 
-/* console.log(countdownMiami()) */
-
-
 //Q7
 
 const countdownQatar = () =>{
@@ -136,8 +128,6 @@ const countdownQatar = () =>{
     return `Months: ${months}, Days: ${days}, Hours: ${hours},  Minutes: ${minutes}, Seconds: ${seconds}`
 }
 
-/* console.log(countdownQatar()) */
-
 //Q8
 
 const timezoneHourDifference = (dateAndtime, timezone1, timezone2) =>{
@@ -149,8 +139,6 @@ const timezoneHourDifference = (dateAndtime, timezone1, timezone2) =>{
     // Rest the hours difference and then we use Math.abs incase the number is negative, we convert it to a positive number.
     return Math.abs(timezoneOne.hour() - timezoneTwo.hour())
 }
-
-/* console.log(timezoneHourDifference("03/22/2022 03:45pm","Asia/Shanghai","America/Los_Angeles")) */
 
 //Q9
 
@@ -181,8 +169,6 @@ const getAllSpecificDays = (year, month, dayOfWeek) =>{
 
 }
 
-/* console.log(getAllSpecificDays(2022, 3, 'Tuesday')) */
-
 //Q10
 
 function getWeekOfYear(date) {
@@ -197,11 +183,8 @@ function getWeekOfYear(date) {
     // If the result is negative it means that it's a "previous" date.
     let weekOfYear = checkDate.week() - startOfYearDate.week()
 
-    //If it's a previous date, then we must get the entire years weeks and then substract the negative weeks valu8es.
+    //If it's a previous date, then we must get the entire years weeks and then substract the negative weeks values.
     if(weekOfYear < 0) weekOfYear = checkDate.weeksInYear() + weekOfYear
 
     return weekOfYear + 1
-  } 
-
-
-console.log(getWeekOfYear(moment()))
+} 
